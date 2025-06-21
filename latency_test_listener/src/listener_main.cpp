@@ -1,4 +1,4 @@
-#include "listener.h"
+#include "comp.h"
 #include "rclcpp/rclcpp.hpp"
 
 int main(int argc, char *argv[]) {
@@ -6,7 +6,8 @@ int main(int argc, char *argv[]) {
   auto node = rclcpp::Node::make_shared("latency_test_listener");
   RCLCPP_INFO(node->get_logger(), "Creating node...");
 
-  rclcpp::spin(std::make_shared<listener>());
+  rclcpp::spin(std::make_shared<comp>());
+
   rclcpp::shutdown();
   return 0;
 }

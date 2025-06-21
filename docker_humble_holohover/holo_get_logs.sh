@@ -3,8 +3,8 @@
 PATH_TO_LOGS="/home/ubuntu/testing/testing_logs/logger.csv"
 
 ### Change file location and name
-PATH_TO_LOCAL_LOGS="/Users/matasjones/Desktop/PDS_II/holo_tests/june_19/UDP_HOLO"
-file_name_first_part="HOLO_UDP_socket"
+PATH_TO_LOCAL_LOGS="/Users/matasjones/Desktop/PDS_II/holo_tests/week16"
+file_name_first_part="RAW_socket"
 ###
 
 CMD="scp $PATH_TO_LOGS $PATH_TO_LOCAL_LOGS"
@@ -20,7 +20,7 @@ if ping -c 1 ${REMOTE_IPS[0]} &> /dev/null; then # ping -c 1 ip_address -> sends
     
     # Send command to devices
     
-    scp ${USERS[0]}@${REMOTE_IPS[0]}:${PATH_TO_LOGS} ${PATH_TO_LOCAL_LOGS}
+    scp ${USERS[1]}@${REMOTE_IPS[0]}:${PATH_TO_LOGS} ${PATH_TO_LOCAL_LOGS}
 
 else
     echo "Ping to $REMOTE_IPS[0]] failed..."

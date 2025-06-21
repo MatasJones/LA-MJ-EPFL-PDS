@@ -40,11 +40,11 @@ endif()
 
 # Create the executable
 add_executable(latency_test_talker
-  src/talker.cpp
   src/talker_main.cpp
   src/talker_TCP.cpp
   src/talker_UDP.cpp
-  src/talker_RAW.cpp
+  src/holo.cpp
+  src/holo_socket.cpp
 )
 
 target_link_libraries(latency_test_talker yaml-cpp flatbuffers)
@@ -52,7 +52,7 @@ target_link_libraries(latency_test_talker yaml-cpp flatbuffers)
 ament_target_dependencies(
   latency_test_talker
   rclcpp
-  std_msgs  # Include std_msgs if you're using it for your messages
+  std_msgs  
   custom_msg
 )
 

@@ -1,3 +1,6 @@
+#ifndef CUSTOM_SER_H
+#define CUSTOM_SER_H
+
 #include "../../custom_msg/flatbuff/message_generated.h"
 #include "flatbuffers/flatbuffers.h"
 
@@ -12,7 +15,7 @@ public:
    * @param value
    * @param buffer to reference during sending
    */
-  static void ser_msg(std::string msg, uint8_t id, int32_t value,
+  static void ser_msg(std::string msg, uint8_t id, float value,
                       flatbuffers::FlatBufferBuilder *builder, uint8_t *buf,
                       uint32_t *size) {
 
@@ -44,7 +47,7 @@ public:
    * @param value
    */
   static bool deser_msg(const uint8_t *buf, std::string &msg, uint8_t &id,
-                        int32_t &value) {
+                        float &value) {
 
     // Extract the message size from the buffer
     uint32_t size;
@@ -66,3 +69,5 @@ public:
     return 1;
   }
 };
+
+#endif
