@@ -1,0 +1,1 @@
+docker build --progress=plain -t testing_image:latest -f Dockerfile .. 
