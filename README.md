@@ -34,6 +34,8 @@ Deploys **TCP**, **UDP**, and **Raw sockets** and tests their communication late
 
 > ⚠️ **Critical:** Start the **talker node first** before the listener node to prevent socket connection issues.
 
+> ⚠️ **Critical:** For the ROS2 and socket implementations, to change modes, it is important to uncomment the desired implementation macro at the top of the talker.cpp and listener.cpp, the modes must match.
+
 ### 3) DISTRIBUTED\_UDP
 
 Implements **UDP socket communication** across the entire distributed system, replacing the default ROS 2 stack.
